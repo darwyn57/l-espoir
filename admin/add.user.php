@@ -38,7 +38,7 @@ if (isset($_POST['username'], $_POST['email'], $_POST['type'], $_POST['password'
     if($res){// Si la requête s'est exécutée avec succès l'utilisateur est crée
        echo "<div class='sucess'>
              <h3>L'utilisateur a été créée avec succés.</h3>
-             <p>Cliquez <a href='home.php'>ici</a> pour retourner à la page d'accueil</p>
+             <p>Cliquez <a href='home.php'><i class='fas fa-user-cog fa-spin' style='color: red'></i></a> pour retourner à la page d'administration</p>
        </div>";
     }
 }else{
