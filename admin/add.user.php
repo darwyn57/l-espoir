@@ -31,8 +31,8 @@ if (isset($_POST['username'], $_POST['email'], $_POST['type'], $_POST['password'
   $type = stripslashes($_POST['type']);// Supprime les slashs d'une chaîne de carractères
   $type = mysqli_real_escape_string($conn, $type); // on protège les données
   
-    $query = "INSERT into `users` (username, email, type, password)
-          VALUES ('$username', '$email', '$type', '".hash('sha256', $password)."')";// Insertion du nouvel utilisateur dans la base de données
+    $query = "INSERT into `users` (username, email, type, password, created_at)
+          VALUES ('$username', '$email', '$type', '".hash('sha256', $password)."', NOW())";// Insertion du nouvel utilisateur dans la base de données
     $res = mysqli_query($conn, $query);// Exécution de la requête
 
     if($res){// Si la requête s'est exécutée avec succès l'utilisateur est crée

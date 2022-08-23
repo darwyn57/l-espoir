@@ -34,9 +34,9 @@ require('../config.php');
     
     <h1>Bienvenue <?php echo $_SESSION['username']; ?>!</h1>    
     <p>Ceci est votre espace admin.</p>
-    <a href="add.user.php">Add user</a> 
+    |<a href="add.user.php">Ajout utilisateur</a> | | 
     
-    <a href="../logout.php">Déconnection</a>
+    <a href="../logout.php">Déconnection</a>|
     </ul>
     </div>
 <div class="formRegister">
