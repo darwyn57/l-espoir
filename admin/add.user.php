@@ -67,7 +67,7 @@ if (isset($_POST['username'], $_POST['email'], $_POST['type'], $_POST['password'
   
     <input type="password" class="box-input" name="password" placeholder="Mot de passe" required />
   
-    <input type="submit" name="submit" value="+ Add" class="box-button" />  
+    <input type="submit" name="submit" value="Ajouter" class="box-button" />  
 </form>
 </main>
 <footer><p>Tous droit réservés &copy; 2022 Association-L'éspoir.</p></footer>

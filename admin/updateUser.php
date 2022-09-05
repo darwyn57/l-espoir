@@ -39,6 +39,7 @@ if (isset($_GET['id'])) {
              <h3>L'utilisateur modifié avec succés.</h3>
              <p>Cliquez <a href='home.php'>ici</a> pour retourner à la page d'accueil</p>
        </div>";
+    
     }
   }
 }
@@ -67,7 +68,7 @@ if (isset($_GET['id'])) {
   
     <input type="password" class="box-input" name="password" placeholder="Mot de passe" required />
   
-    <input type="submit" name="submit" value="+ Add" class="box-button" />  
+    <input type="submit" name="submit" value="Modifier" class="box-button" />  
 </form>
 </main>
 <footer><p>Tous droit réservés &copy; 2022 Association-L'éspoir.</p></footer>

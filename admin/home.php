@@ -10,7 +10,6 @@
 </head>
 <body>
 <?php
-
 require('../config.php');
   // Initialiser la session
   session_start();
@@ -18,24 +17,18 @@ require('../config.php');
   if(!isset($_SESSION["username"])){
     header("Location: login.php");
     exit(); 
-  }
-  
+  }  
   // On récupère tous les utilisateurs
  $query = "SELECT *  FROM users";
  $users = mysqli_query($conn,$query);
- $users= mysqli_fetch_all($users, MYSQLI_ASSOC);
- 
+ $users= mysqli_fetch_all($users, MYSQLI_ASSOC); 
  // fetchAll() permet de récupérer plusieurs enregistrements
- 
-
 ?>
 <main>
-<div class="sucess">
-    
+<div class="sucess">    
     <h1>Bienvenue <?php echo $_SESSION['username']; ?>!</h1>    
     <p>Ceci est votre espace admin.</p>
-    |<a href="add.user.php">Ajout utilisateur</a> | | 
-    
+    |<a href="add.user.php">Ajout utilisateur</a> | |     
     <a href="../logout.php">Déconnection</a>|
     </ul>
     </div>
@@ -43,26 +36,25 @@ require('../config.php');
   <h2 class="box-logo box-title">
   <img src="../upload/LOGO-LespoirC04.png">
   </h2>
-  <span id="date_time"></span>
- 
+  <span id="date_time"></span> 
   <table class="table">
+    </thead>
     <tr>
         <th>user</th>
         <th>type</th>
-        
+        <th>Action</th>
+        <th>Actif</th>        
     </tr>
     </thead>
     <tbody>
         <?php foreach ($users as $user) : ?>
             <tr>
                 <td scope="row"><?= $user['username'] ?></td>
-                <td><?= $user['type'] ?></td>
-                
+                <td><?= $user['type'] ?></td>                
                 <td><a href="updateUser.php?id=<?= $user['id'] ?>"><i class="fas fa-pen-alt" style="color: green"></i></a>
-                <a href="deleteUser.php?id=<?= $user['id'] ?>"onclick="return window.confirm('etes vous sur de supprimer cet utilisateur')"><i class="fas fa-trash-alt" style="color: red"></i></a>   
-                                
+                <a href="deleteUser.php?id=<?= $user['id'] ?>"onclick="return window.confirm('etes vous sur de supprimer cet utilisateur')"><i class="fas fa-trash-alt" style="color: red"></i></a><a href="disable.php?id=<?= $user['id'] ?>"><i class="fas fa-toggle-on" style="color: teal"></i></a></td>
+                <td><?= $user['actif'] ?></td>              
                 
-                </td> 
             </tr>
         <?php endforeach; ?>
     </tbody>
